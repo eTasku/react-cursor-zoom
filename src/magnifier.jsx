@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 
 class Magnifier extends React.Component {
@@ -25,12 +26,12 @@ class Magnifier extends React.Component {
                     style={{
                         position: 'absolute',
                         display: isVisible ? 'block' : 'none',
-                        top: props.y,
-                        left: props.x,
-                        width: props.size + (props.size * .4),
-                        height: props.size,
-                        marginLeft: -halfSizeX + props.cursorOffset.x,
-                        marginTop: -halfSizeY + props.cursorOffset.y,
+                        top: props.y + 'px',
+                        left: props.x + 'px',
+                        width: props.size + (props.size * .4) + 'px',
+                        height: props.size + 'px',
+                        marginLeft: -halfSizeX + props.cursorOffset.x + 'px',
+                        marginTop: -halfSizeY + props.cursorOffset.y + 'px',
                         backgroundColor: 'white',
                         boxShadow: '1px 1px 6px rgba(0,0,0,0.3)',
                         zIndex: 9999
@@ -43,8 +44,8 @@ class Magnifier extends React.Component {
                     <div
                         className={'cursor-zoom-magnifier'}
                         style={{
-                            width: props.size + (props.size * .4),
-                            height: props.size,
+                            width: props.size + (props.size * .4) + 'px',
+                            height: props.size + 'px',
                             backgroundImage: 'url(' + props.zoomImage.src + ')',
                             backgroundRepeat: 'no-repeat',
                             backgroundPosition: bgX + 'px ' + bgY + 'px',
@@ -61,37 +62,37 @@ Magnifier.displayName = 'CursorZoom';
 
 Magnifier.propTypes = {
     // the size of the magnifier window
-    size: React.PropTypes.number.isRequired,
+    size: PropTypes.number.isRequired,
     // x position on screen
-    x: React.PropTypes.number.isRequired,
+    x: PropTypes.number.isRequired,
     // y position on screen
-    y: React.PropTypes.number.isRequired,
+    y: PropTypes.number.isRequired,
     // x position relative to the image
-    offsetX: React.PropTypes.number.isRequired,
+    offsetX: PropTypes.number.isRequired,
     // y position relative to the image
-    offsetY: React.PropTypes.number.isRequired,
+    offsetY: PropTypes.number.isRequired,
     // the offset of the zoom bubble from the cursor
-    cursorOffset: React.PropTypes.shape({
-        x: React.PropTypes.number.isRequired,
-        y: React.PropTypes.number.isRequired
+    cursorOffset: PropTypes.shape({
+        x: PropTypes.number.isRequired,
+        y: PropTypes.number.isRequired
     }).isRequired,
-    borderSize: React.PropTypes.string,
-    borderColor: React.PropTypes.string,
+    borderSize: PropTypes.string,
+    borderColor: PropTypes.string,
     // show a triangle pointer next to cursor (useful with offset)
-    pointerStyle: React.PropTypes.object,
+    pointerStyle: PropTypes.object,
     // the size of the non-zoomed-in image
-    smallImage: React.PropTypes.shape({
-        src: React.PropTypes.string.isRequired,
-        width: React.PropTypes.number.isRequired,
-        height: React.PropTypes.number.isRequired
+    smallImage: PropTypes.shape({
+        src: PropTypes.string.isRequired,
+        width: PropTypes.number.isRequired,
+        height: PropTypes.number.isRequired
     }).isRequired,
     // the size of the zoomed-in image
-    zoomImage: React.PropTypes.shape({
-        src: React.PropTypes.string.isRequired,
-        width: React.PropTypes.number.isRequired,
-        height: React.PropTypes.number.isRequired
+    zoomImage: PropTypes.shape({
+        src: PropTypes.string.isRequired,
+        width: PropTypes.number.isRequired,
+        height: PropTypes.number.isRequired
     }).isRequired,
-    onClick: React.PropTypes.func
+    onClick: PropTypes.func
 };
 
 export default Magnifier;

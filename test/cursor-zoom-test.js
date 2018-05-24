@@ -128,8 +128,8 @@ describe('Cursor Zoom Component - Pointer Feature', () => {
                     borderWidth: '13.5px 23.4px 13.5px 0',
                     borderColor: 'transparent white transparent transparent',
                     position: 'absolute',
-                    left: '-18',
-                    bottom: '10'
+                    left: '-18px',
+                    bottom: '10px'
                 }}
             />
         );

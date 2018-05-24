@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Magnifier from './magnifier';
@@ -84,29 +85,29 @@ CursorZoom.displayName = 'CursorZoom';
 
 CursorZoom.propTypes = {
     // the size of the magnifier window
-    size: React.PropTypes.number,
+    size: PropTypes.number,
     // the offset of the zoom bubble from the cursor
-    borderSize: React.PropTypes.string,
-    borderColor: React.PropTypes.string,
+    borderSize: PropTypes.string,
+    borderColor: PropTypes.string,
     // show a triangle pointer next to cursor (useful with offset)
-    pointerStyle: React.PropTypes.object,
-    cursorOffset: React.PropTypes.shape({
-        x: React.PropTypes.number.isRequired,
-        y: React.PropTypes.number.isRequired
+    pointerStyle: PropTypes.object,
+    cursorOffset: PropTypes.shape({
+        x: PropTypes.number.isRequired,
+        y: PropTypes.number.isRequired
     }),
     // the size of the non-zoomed-in image
-    image: React.PropTypes.shape({
-        src: React.PropTypes.string.isRequired,
-        width: React.PropTypes.number.isRequired,
-        height: React.PropTypes.number.isRequired
+    image: PropTypes.shape({
+        src: PropTypes.string.isRequired,
+        width: PropTypes.number.isRequired,
+        height: PropTypes.number.isRequired
     }).isRequired,
     // the size of the zoomed-in image
-    zoomImage: React.PropTypes.shape({
-        src: React.PropTypes.string.isRequired,
-        width: React.PropTypes.number.isRequired,
-        height: React.PropTypes.number.isRequired
+    zoomImage: PropTypes.shape({
+        src: PropTypes.string.isRequired,
+        width: PropTypes.number.isRequired,
+        height: PropTypes.number.isRequired
     }).isRequired,
-    onClick: React.PropTypes.func
+    onClick: PropTypes.func
 };
 
 CursorZoom.defaultProps = {
