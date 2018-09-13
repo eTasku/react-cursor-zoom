@@ -46,7 +46,7 @@ class Magnifier extends React.Component {
                         style={{
                             width: props.size + (props.size * .4) + 'px',
                             height: props.size + 'px',
-                            backgroundImage: 'url(' + props.zoomImage.src + ')',
+                            backgroundImage: 'url("' + props.zoomImage.src + '")',
                             backgroundRepeat: 'no-repeat',
                             backgroundPosition: bgX + 'px ' + bgY + 'px',
                             border: props.borderSize + ' solid ' + props.borderColor
